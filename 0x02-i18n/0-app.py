@@ -8,4 +8,5 @@ app = Flask(__name__)
 # Create a single route
 @app.route('/')
 def index():
+    """ return index page """
     return render_template('0-index.html')
