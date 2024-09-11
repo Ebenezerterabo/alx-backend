@@ -5,11 +5,18 @@ from flask_babel import Babel
 # Create an instance of Flask and Babel
 app = Flask(__name__)
 babel = Babel(app)
-# Configure availabel languages
-app.config['LANGUAGES'] = ['en', 'fr']
-# Set the default language and timezone
-app.config['BABEL_DEFAULT_LOCALE'] = 'en'
-app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
+
+
+# Create a Config Class
+class Config():
+    """ Config Class """
+    LANGUAGES = ['en', 'fr']
+    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
+
+
+# Set the config with the Config Class
+app.config.from_object(Config)
 
 
 # Create a single route
