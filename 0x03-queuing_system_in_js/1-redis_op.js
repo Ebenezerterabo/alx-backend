@@ -1,5 +1,5 @@
-import { redis } from 'kue';
 import { createClient } from 'redis';
+
 /* Create a client */
 const client = createClient();
 
